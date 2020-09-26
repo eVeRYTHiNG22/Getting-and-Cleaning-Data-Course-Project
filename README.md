@@ -1,5 +1,5 @@
 ## Getting-and-Cleaning-Data-Course-Project
-This is a submission for Getting and Cleaning Data Course Project. It has the instructions on how to run analysis on Human Activity recognition dataset.
+This is a submission for Getting and Cleaning Data Course Project. It has the instructions on how to run analysis on Human Activity Recognition dataset.
 
 ### Dataset
 [Human Activity Recognition Using Smartphones](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones)
