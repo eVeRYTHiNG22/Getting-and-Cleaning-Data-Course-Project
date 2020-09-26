@@ -77,9 +77,9 @@ These signals were used to estimate variables of the feature vector for each pat
 
 The set of variables that were estimated from these signals are: 
 
-mean(): Mean value
-std(): Standard deviation
-angle(): angle between two vectors  
+- `mean()`: Mean value
+- `std()`: Standard deviation
+- `angle()`: angle between two vectors  
   
 Additional vectors obtained by averaging the signals in a signal window sample. These are used on the angle() variable:  
   
@@ -89,4 +89,4 @@ Additional vectors obtained by averaging the signals in a signal window sample. 
 - `timeBodyGyroscopeMean`
 - `timeBodyGyroscopeJerkMean`
 
-The complete list of variables of each feature vector is available in '`features.txt`.
+The complete list of variables of each feature vector is available in `features.txt`.
