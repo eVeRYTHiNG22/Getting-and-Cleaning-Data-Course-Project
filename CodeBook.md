@@ -1,22 +1,24 @@
+# Code Book
+
 The `run_analysis.R` script performs data preparation and then follows by steps described in the course project’s instructions.
 
 ## 1. Assign data to variables from data files
-  - `features` <- `features.txt` : 561 rows, 2 columns
-    The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ.
-  - `activity_labels` <- `activity_labels.txt` : 6 rows, 2 columns
-    List of activities performed when the corresponding measurements were taken and its labels.
-  - `subject_test` <- `test/subject_test.txt` : 2947 rows, 1 column
-    Contains test data of 9/30 volunteer test subjects being observed.
-  - `X_test` <- `test/X_test.txt` : 2947 rows, 561 columns
-    Contains recorded features of test data.
-  - `y_test` <- `test/y_test.txt` : 2947 rows, 1 columns
-    Contains data of activities’ labels.
-  - `subject_train` <- `test/subject_train.txt` : 7352 rows, 1 column
-    Contains train data of 21/30 volunteer subjects being observed.
-  - `X_train` <- `test/X_train.txt` : 7352 rows, 561 columns
-    Contains recorded features of train data.
-  - `y_train` <- `test/y_train.txt` : 7352 rows, 1 columns
-    Contains train data of activities’ labels.
+  - `features` <- `features.txt` : 561 rows, 2 columns  
+  The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ.
+  - `activity_labels` <- `activity_labels.txt` : 6 rows, 2 columns  
+  List of activities performed when the corresponding measurements were taken and its labels.
+  - `subject_test` <- `test/subject_test.txt` : 2947 rows, 1 column  
+  Contains test data of 9/30 volunteer test subjects being observed.
+  - `X_test` <- `test/X_test.txt` : 2947 rows, 561 columns  
+  Contains recorded features of test data.
+  - `y_test` <- `test/y_test.txt` : 2947 rows, 1 columns  
+  Contains data of activities’ labels.
+  - `subject_train` <- `test/subject_train.txt` : 7352 rows, 1 column  
+  Contains train data of 21/30 volunteer subjects being observed.
+  - `X_train` <- `test/X_train.txt` : 7352 rows, 561 columns  
+  Contains recorded features of train data.
+  - `y_train` <- `test/y_train.txt` : 7352 rows, 1 columns  
+  Contains train data of activities’ labels.
 
 ## 2. Merges the training and the test sets to create one data set
   - `X` (10299 rows, 561 columns) is created by merging `X_train` and `X_test` using `rbind()` function.
@@ -41,4 +43,4 @@ The `run_analysis.R` script performs data preparation and then follows by steps 
 
 ## 6. From the prepared data set, creates a second, independent tidy data set with the average of each variable for each activity and each subject
   - `final_data` (180 rows, 88 columns) is created by summarizing `tidy_data` taking the mean of each variable for each activity for each subject, after grouping by `subject` and `activity`.
-Export FinalData into FinalData.txt file.
+  - `final_data` is exported into `final_data.txt` file.
