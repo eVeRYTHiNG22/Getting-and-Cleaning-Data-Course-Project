@@ -44,3 +44,49 @@ The `run_analysis.R` script performs data preparation and then follows by steps 
 ## 6. From the prepared data set, creates a second, independent tidy data set with the average of each variable for each activity and each subject
   - `final_data` (180 rows, 88 columns) is created by summarizing `tidy_data` taking the mean of each variable for each activity for each subject, after grouping by `subject` and `activity`.
   - `final_data` is exported into `final_data.txt` file.
+
+
+## Feature Selection 
+
+The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals `timeAccelerometer-XYZ` and `timeGyroscope-XYZ`. These time domain signals were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (`timeBodyAccelerometer-XYZ` and `timeGravityAccelerometer-XYZ`) using another low pass Butterworth filter with a corner frequency of 0.3 Hz.  
+  
+Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (`timeBodyAccelerometerJerk-XYZ` and `timeBodyGyroscopeJerk-XYZ`). Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (`timeBodyAccelerometerMagnitide`, `timeGravityAccelerometerMagnitude`, `timeBodyAccelerometerJerkMagnitude`, `timeBodyGyroscopeMagnitude`, `timeBodyGyroscopeJerkMagnitude`).  
+  
+Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing `frequenctBodyAccelerometer-XYZ`, `frequencyBodyAccelerometerJerk-XYZ`, `frequencyBodyGyroscope-XYZ`, `frequencyBodyAccelerometerJerkMagnitude`, `frequencyBodyGyroscopeMagnitude`, `frequencyBodyGyroscopeJerkMagnitude`.  
+  
+These signals were used to estimate variables of the feature vector for each pattern:  
+'-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.  
+
+- `timeBodyAccelerometer-XYZ`
+- `timeGravityAccelerometer-XYZ`
+- `timeBodyAccelerometerJerk-XYZ`
+- `timeBodyGyroscope-XYZ`
+- `timeBodyGyroscopeJerk-XYZ`
+- `timeBodyAccelerometerMagnitide`
+- `timeGravityAccelerometerMagnitude`
+- `timeBodyAccelerometerJerkMagnitude`
+- `timeBodyGyroscopeMagnitude`
+- `timeBodyGyroscopeJerkMagnitude`
+- `frequenctBodyAccelerometer-XYZ`
+- `frequencyBodyAccelerometerJerk-XYZ`
+- `frequencyBodyGyroscope-XYZ`
+- `frequencyBodyAccelerometercMagnitude`
+- `frequencyBodyAccelerometerJerkMagnitude`
+- `frequencyBodyGyroscopeMagnitude`
+- `frequencyBodyGyroscopeJerkMagnitude`
+
+The set of variables that were estimated from these signals are: 
+
+mean(): Mean value
+std(): Standard deviation
+angle(): angle between two vectors  
+  
+Additional vectors obtained by averaging the signals in a signal window sample. These are used on the angle() variable:  
+  
+- `GravityMean`
+- `timeBodyAccelerometerMean`
+- `timeBodyAccelerometerJerkMean`
+- `timeBodyGyroscopeMean`
+- `timeBodyGyroscopeJerkMean`
+
+The complete list of variables of each feature vector is available in '`features.txt`.
